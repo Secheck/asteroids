@@ -6,8 +6,7 @@ class Ship extends GameObject {
   int threshold;
 
   //2. Constructor(s)
-  Ship(int s) {   
-    size = s;
+  Ship() {   
     lives = 3;
     shotTimer = 0;
     threshold = 30;
@@ -20,16 +19,10 @@ class Ship extends GameObject {
   //3. Behaviour functions
   void show() {
     pushMatrix();
-    
     translate(location.x, location.y);
     rotate( direction.heading() );
-    translate(-15, -20);
-    
-    stroke(0,255,0);
-    noFill();
-    //triangle(-25, -12.5, -25, 12.5, 25, 0);
+    image(ship, 0, 0);
     popMatrix();
-    image(ship, location.x, location.y, 30, 40);
   }
 
   void act() {
@@ -52,3 +45,4 @@ class Ship extends GameObject {
     }
   }
 }
+ 
